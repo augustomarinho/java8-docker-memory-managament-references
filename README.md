@@ -1,6 +1,6 @@
 # java8-docker-memory-managament-references
 
-#Command used as an examples:
+# Commands used as an examples:
 1) Creating containers
 
 `docker run --name java8 -t -d --memory=100m --entrypoint "/bin/sh" java:openjdk-8-alpine`
@@ -23,7 +23,7 @@
 
 `docker exec -it java10 java -XX:+PrintFlagsFinal -version | grep -w "UseContainerSupport"`
 
-#References:
+# References:
 
 https://www.linuxjournal.com/content/everything-you-need-know-about-linux-containers-part-i-linux-control-groups-and-process
 
