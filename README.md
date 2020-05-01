@@ -7,9 +7,13 @@
 
 `docker run --name java8-212 -t -d --memory=100m --entrypoint "/bin/bash" openjdk:8u212-jre`
 
+`docker run --name java8-nolimit -t -d --entrypoint "/bin/sh" java:openjdk-8-alpine`
+
+`docker run --name java9 -t -d --memory=100m --entrypoint "/bin/sh" openjdk:9`
+
 `docker run --name java10 -t -d --memory=100m --entrypoint "/bin/bash" openjdk:10-jdk`
 
-`docker run --name java8-nolimit -t -d --entrypoint "/bin/sh" java:openjdk-8-alpine`
+`docker run --name java11 -t -d --memory=100m --entrypoint "/bin/bash" openjdk:11-jdk`
 
 `docker run --name java12 -t -d --memory=100m --entrypoint "/bin/sh" openjdk:12-alpine`
 
@@ -61,6 +65,28 @@
 `docker exec -it java8-212 java -XX:+PrintFlagsFinal -version | grep -w "UseCGroupMemoryLimitForHeap"`
 
 `docker exec -it java8-212 java -XX:+PrintFlagsFinal -version | grep -w "MetaspaceSize\|MaxMetaspaceSize"`
+
+`docker exec -it java9 java -XX:+PrintFlagsFinal -version | grep MaxHeapSize`
+
+`docker exec -it java9 java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+PrintFlagsFinal -version | grep -w "UseCGroupMemoryLimitForHeap"`
+
+5) -XX:UseContainerSupport Estudies
+
+`docker exec -it java9 java -XX:+PrintFlagsFinal -version | grep -w "UseContainerSupport"`
+
+`docker exec -it java10 java -XX:+PrintFlagsFinal -version | grep -w "UseContainerSupport"`
+
+`docker exec -it java10 java -XX:+PrintFlagsFinal -version | grep MaxHeapSize`
+
+`docker exec -it java8-212 java -XX:+PrintFlagsFinal -version | grep MaxHeapSize`
+
+`docker exec -it java8-212 java -XX:+PrintFlagsFinal -version | grep -w "UseContainerSupport"`
+
+`docker exec -it java10 java -XX:+PrintFlagsFinal -version | grep -w "MetaspaceSize\|MaxMetaspaceSize"`
+
+
+
+
 
 # References:
 
