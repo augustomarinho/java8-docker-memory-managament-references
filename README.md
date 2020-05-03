@@ -111,3 +111,5 @@ https://fabiokung.com/2014/03/13/memory-inside-linux-containers/
 https://www.javainuse.com/java/metaspace
 
 http://java-latte.blogspot.com/2014/03/metaspace-in-java-8.html
+
+https://www.infoq.com/articles/Java-PERMGEN-Removed/
